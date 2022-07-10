@@ -14,6 +14,7 @@ import App from './routers/App';
 import i18n from './shared/i18n';
 import { getPopupContainer } from './shared/utils/tools';
 import '#/shared/utils/firebase';
+import { AppProvider } from './shared/context/AppContext';
 
 createRoot(document.getElementById('root')!).render(
   <Sentry.ErrorBoundary fallback={<p>An error has occurred</p>}>
@@ -26,7 +27,9 @@ createRoot(document.getElementById('root')!).render(
           locale={enUS}
         >
           <BrowserRouter>
-            <App />
+            <AppProvider>
+              <App />
+            </AppProvider>
           </BrowserRouter>
         </ConfigProvider>
       </ApolloProvider>

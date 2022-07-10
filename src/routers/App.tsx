@@ -3,13 +3,17 @@ import GuardRoute from './GuardRoute';
 import PrivateRoute from './PrivateRoute';
 import { loadable } from '#/shared/utils/loadable';
 
-const Index = loadable(import('#/pages/index'));
+const LoginPage = loadable(import('#/pages/login'));
 
-const App = () => {
+function App() {
   const routes = useRoutes([
     {
-      path: '/',
-      element: <Index />,
+      path: '/login',
+      element: (
+        <GuardRoute>
+          <LoginPage />
+        </GuardRoute>
+      ),
     },
     {
       path: '/*',
@@ -21,7 +25,11 @@ const App = () => {
     },
   ]);
 
-  return routes;
-};
+  return (
+    <div className="flex h-full w-full items-center justify-center">
+      {routes}
+    </div>
+  );
+}
 
 export default App;

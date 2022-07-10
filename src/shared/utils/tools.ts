@@ -1,5 +1,11 @@
 import { notification } from 'antd';
 
+export const showSuccess = (message: string, description?: string) =>
+  notification.success({
+    message,
+    description,
+  });
+
 export const showError = (error: unknown | string) => {
   const message = (() => {
     if (typeof error === 'string') return error;
