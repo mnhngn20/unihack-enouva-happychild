@@ -1,6 +1,6 @@
-import { Button } from 'antd';
 import { useEffect } from 'react';
 import { getDatabase, ref, onValue } from 'firebase/database';
+import Courses from './Courses';
 
 function Index() {
   useEffect(() => {
@@ -14,8 +14,7 @@ function Index() {
 
   return (
     <>
-      <Button type="primary">Button</Button>
-      <p>Hello</p>;
+      <Courses />
     </>
   );
 }
