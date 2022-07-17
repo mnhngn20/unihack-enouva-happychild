@@ -186,6 +186,7 @@ export default function Result() {
                     </Col>
                     <Col span={12}>
                       <Slider
+                        disabled
                         step={1}
                         marks={marks}
                         defaultValue={result.result}

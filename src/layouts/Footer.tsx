@@ -13,7 +13,7 @@ import HappyChild from '#/assets/images/happychild.jpg';
 const { Footer } = Layout;
 
 const StyledFooter = styled(Footer)`
-  padding-top: 6rem;
+  padding-top: 2rem;
   position: relative;
 `;
 const IconWrapper = styled.div`
@@ -109,7 +109,7 @@ function FooterComponent() {
         </Col>
       </Row>
       <Divider className="border-white my-14" />
-      <Row className="mb-16 grid grid-cols-3 items-center">
+      <Row className="mb-16 flex grid grid-cols-3 items-center">
         <Space>
           <a target="_blank" href="https://twitter.com/" rel="noreferrer">
             <IconWrapper>
@@ -132,7 +132,11 @@ function FooterComponent() {
             Happy Child
           </Typography.Paragraph>
         </div>
-        {/* <Smartos className="ml-auto" /> */}
+        <div className="mt-4 flex justify-center">
+          <Typography.Paragraph className="text-xl">
+            Enouva
+          </Typography.Paragraph>
+        </div>
       </Row>
     </StyledFooter>
   );
